@@ -1,0 +1,55 @@
+{
+  "genesis_time": "0001-01-01T00:00:00Z",
+  "chain_id": "test-chain",
+  "validators": [
+    {
+      "pub_key": {
+        "type": "ed25519",
+        "data": "0FF5F0E1243FAC123636D1CE3D749B502CF8BE5F6D25F061892E2E486B45FF3F"
+      },
+      "power": 9,
+      "name": "beijing"
+    },
+    {
+      "pub_key": {
+        "type": "ed25519",
+        "data": "A59A0F38301CF02E82666541D78D6981C5A6481D9AD25EC933FC9E2FB97C29FC"
+      },
+      "power": 9,
+      "name": "hangzhou"
+    },
+    {
+      "pub_key": {
+        "type": "ed25519",
+        "data": "DF433093D25A22C80FD83AB10C9908DDEE1D4990DA905F24B2213044EFAD520C"
+      },
+      "power": 10,
+      "name": "shanghai"
+    },
+    {
+      "pub_key": {
+        "type": "ed25519",
+        "data": "218D7E82A0F2C4B31D7089A4DEE33DEBA34899CC3924E99C1CD32D71BA25EB3A"
+      },
+      "power": 9,
+      "name": "shenzhen"
+    },
+    {
+      "pub_key": {
+        "type": "ed25519",
+        "data": "89CDAD16EA0AF706EE5CD22EB44B4F8C4BBC241D61676F1F5F753A0317D8BF78"
+      },
+      "power": 9,
+      "name": "hongkong"
+    },
+    {
+      "pub_key": {
+        "type": "ed25519",
+        "data": "FF4CE56675890F7E460422761B22223E2CECD1EA31DA11F465AA83E78414D92A"
+      },
+      "power": 9,
+      "name": "qingdao"
+    }
+  ],
+  "app_hash": ""
+}

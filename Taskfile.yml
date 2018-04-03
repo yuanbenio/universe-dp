@@ -1,0 +1,104 @@
+default:
+  desc: 帮助文件
+  cmds:
+    - task -l
+
+install_docker:
+  desc: 安装docker
+  cmds:
+      - sudo curl -sSL https://get.daocloud.io/docker | sudo sh
+      - sudo groupadd docker
+      - sudo gpasswd -a ${USER} docker
+      - sudo service docker restart
+      - sudo newgrp - docker
+
+deps:
+  desc: 检查依赖
+  cmds:
+    - which docker || task install_docker
+    - which docker-compose || sudo pip install docker-compose
+    - task login
+
+login:
+  desc: 登陆镜像仓库
+  cmds:
+    - docker login -u baiyunhui@yuanben -p ybl12345 registry.cn-hangzhou.aliyuncs.com
+
+pro:
+  desc: 初始化pro项目
+  cmds:
+    - task pull
+    - sudo rm -rf kdata
+    - cp -r pro kdata
+    - sudo docker run --rm -v `pwd`/kdata:/kdata kchain init
+    - sudo chmod 755 `pwd`/kdata/config/priv_validator.json
+    - task: s
+
+dev:
+  desc: 初始化dev项目
+  cmds:
+    - task pull
+    - sudo rm -rf kdata
+    - cp -r dev kdata
+    - sudo docker run --rm -v `pwd`/kdata:/kdata kchain init
+    - sudo chmod 755 `pwd`/kdata/config/priv_validator.json
+    - task: s
+
+s:
+  desc: 启动项目
+  cmds:
+    - docker-compose up -d
+    - docker-compose logs -f
+
+ss:
+  desc: 重启项目
+  cmds:
+    - task pull
+    - docker-compose stop
+    - docker-compose rm -f
+    - docker-compose up -d
+    - docker-compose logs -f
+
+d:
+  desc: 删除项目
+  cmds:
+    - docker-compose stop
+    - docker-compose rm -f
+
+log:
+  desc: 打印日志
+  cmds:
+    - docker-compose logs -f
+
+ls:
+  desc: 查看服务
+  cmds:
+    - docker-compose ps
+
+kchain:
+  desc: 启动单独kchain,检测原本链的链接
+  cmds:
+    - docker run --rm -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata kchain node --trace
+
+rm_none:
+  desc: 删除none镜像
+  cmds:
+    - sudo docker images | grep none | awk '{print $3}' | xargs docker rmi -f
+
+rm_stop:
+  desc: 删除停止的容器
+  cmds:
+    - sudo docker rm -f $(sudo docker ps -qa)
+    - sudo docker ps -a
+
+pull:
+  desc: 拉取镜像
+  cmds:
+    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/kchain
+    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/kchain kchain
+
+    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/knode
+    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/knode knode
+
+    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/mysql
+    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/mysql mysql
