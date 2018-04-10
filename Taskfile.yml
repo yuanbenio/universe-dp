@@ -94,11 +94,12 @@ rm_stop:
 pull:
   desc: 拉取镜像
   cmds:
+    - git pull
     - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/kchain
     - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/kchain kchain
 
     - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/knode
     - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/knode knode
 
-    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/mysql
-    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/mysql mysql
+#    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/mysql
+#    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/mysql mysql
