@@ -8,10 +8,10 @@ services:
     volumes:
       - './kdata:/kdata'
     links:
-      - kchain
+#      - kchain
       - redis
     depends_on:
-      - kchain
+#      - kchain
       - redis
 
   kworker:
@@ -21,20 +21,20 @@ services:
     volumes:
       - './kdata:/kdata'
     links:
-      - kchain
+#      - kchain
       - redis
     depends_on:
-      - kchain
+#      - kchain
       - redis
 
-  kchain:
-    restart: always
-    image: kchain
-    ports:
-      - '46656:46656'
-      - '46657:46657'
-    volumes:
-      - './kdata:/kdata'
+#  kchain:
+#    restart: always
+#    image: kchain
+#    ports:
+#      - '46656:46656'
+#      - '46657:46657'
+#    volumes:
+#      - './kdata:/kdata'
 
   redis:
       image: redis
