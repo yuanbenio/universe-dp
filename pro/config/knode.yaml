@@ -11,5 +11,5 @@ bind_port: 8081
 advertise_port: 8081
 log_level: info
 is_auth_filter: false
-redis: redis://redis:6379/0
+redis: redis://test:6379/0
 redisQ: redis://redis:6379/0
