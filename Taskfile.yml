@@ -76,9 +76,16 @@ ls:
     - docker-compose ps
 
 kchain:
-  desc: 启动单独kchain,检测原本链的链接
+  desc: 启动kchain
   cmds:
-    - docker run --rm -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata kchain node --trace
+    - docker run -dit --restart=always --name=kchain -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata kchain
+    - docker logs -f kchain
+
+kchain_restart:
+  desc: 重启kchain
+  cmds:
+    - docker rm -f kchain
+    - task kchain
 
 rm_none:
   desc: 删除none镜像
