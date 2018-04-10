@@ -1,6 +1,0 @@
-{
-  "priv_key": {
-    "type": "ed25519",
-    "data": "hello"
-  }
-}
