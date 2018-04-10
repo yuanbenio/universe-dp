@@ -82,6 +82,11 @@ kchain:
     - docker run -dit --restart=always --name=kchain -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata kchain
     - docker logs -f kchain
 
+kchain_reset:
+  desc: 启动kchain
+  cmds:
+    - sudo docker run --rm -v `pwd`/kdata:/kdata kchain unsafe_reset_all
+
 kchain_restart:
   desc: 重启kchain
   cmds:
