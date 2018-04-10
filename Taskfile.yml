@@ -18,6 +18,7 @@ deps:
     - which docker || task install_docker
     - which docker-compose || sudo pip install docker-compose
     - task login
+    - task pull
 
 login:
   desc: 登陆镜像仓库
