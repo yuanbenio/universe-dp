@@ -31,7 +31,7 @@ pro:
     - task pull
     - sudo rm -rf kdata
     - cp -r pro kdata
-    - sudo docker run --rm -v `pwd`/kdata:/kdata kchain init
+    - sudo docker run --rm -v `pwd`/kdata:/kdata universe-chain init
     - sudo chmod 755 `pwd`/kdata/config/priv_validator.json
     - task: s
 
@@ -41,7 +41,7 @@ dev:
     - task pull
     - sudo rm -rf kdata
     - cp -r dev kdata
-    - sudo docker run --rm -v `pwd`/kdata:/kdata kchain init
+    - sudo docker run --rm -v `pwd`/kdata:/kdata universe-chain init
     - sudo chmod 755 `pwd`/kdata/config/priv_validator.json
     - task: s
 
@@ -79,7 +79,7 @@ ls:
 kchain:
   desc: 启动kchain
   cmds:
-    - docker run -dit --restart=always --name=kchain -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata kchain
+    - docker run -dit --restart=always --name=kchain -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata universe-chain
     - docker logs -f kchain
 
 kchain_reset:
@@ -108,8 +108,8 @@ pull:
   desc: 拉取镜像
   cmds:
     - git pull
-    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/kchain
-    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/kchain kchain
+    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/universe-chain:latest
+    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/universe-chain:latest universe-chain
 
     - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/knode
     - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/knode knode
