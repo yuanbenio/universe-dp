@@ -1,15 +1,19 @@
-abci: http://localhost:46657
+abci: http://47.100.65.155:46657
 config: /kdata/config
 home_path: /kdata
 priv_validator: /kdata/config/priv_validator.json
-
 debug: true
 log_level: info
-
 bind_addr: 0.0.0.0
 bind_port: 8081
 advertise_port: 8081
 log_level: info
 is_auth_filter: false
-redis: redis://redis:6379/0
-redisQ: redis://redis:6379/0
+redis: redis://:yb12345@47.100.65.155:9221/0
+dna_cache_path: dnaData
+master_pubkeys: 1624de6420e15aee7543c19a01a12ab135416bedc6b77d86ceb373c1bb51785f192c2c8452
+seeds: EF8B18476BED7C98554CF327B898DCC82DA45FCB=https://openapi.yuanbenlian.com
+bak_history: true
+max_idle: 100
+max_active: 10
+cache_timeout : 600

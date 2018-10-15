@@ -1,54 +1,105 @@
 {
-  "genesis_time": "0001-01-01T00:00:00Z",
-  "chain_id": "yuanbenchain",
+  "genesis_time": "2018-10-11T08:04:55.789488292Z",
+  "chain_id": "test-chain-btyLG5",
+  "consensus_params": {
+    "block_size_params": {
+      "max_bytes": "1048576",
+      "max_gas": "-1"
+    },
+    "evidence_params": {
+      "max_age": "100000"
+    }
+  },
   "validators": [
     {
+      "address": "49FFAE29AB1E2B62BAB7FC6FC5165FCF3EF9B96E",
       "pub_key": {
-        "type": "ed25519",
-        "data": "0FF5F0E1243FAC123636D1CE3D749B502CF8BE5F6D25F061892E2E486B45FF3F"
+        "type": "tendermint/PubKeyEd25519",
+        "value": "7InTvHr68DACb0m0FDwxHzQwv792Hm7v5/fRWKVzkg4="
       },
-      "power": 9,
-      "name": "beijing"
+      "power": "9",
+      "name": "beijing-01"
     },
     {
+      "address": "1209D586ED2E681A6029E1F93DBCE3A58B63D5E9",
       "pub_key": {
-        "type": "ed25519",
-        "data": "A59A0F38301CF02E82666541D78D6981C5A6481D9AD25EC933FC9E2FB97C29FC"
+        "type": "tendermint/PubKeyEd25519",
+        "value": "Myc19y2oEatkA+PTzuTa0cu9DQ4diyHQ4oXc3JpJJhA="
       },
-      "power": 9,
-      "name": "hangzhou"
+      "power": "9",
+      "name": "shanghai-01"
     },
     {
+      "address": "258C7ED4FD61F4500938F53B8C00E8E286EC1B83",
       "pub_key": {
-        "type": "ed25519",
-        "data": "DF433093D25A22C80FD83AB10C9908DDEE1D4990DA905F24B2213044EFAD520C"
+        "type": "tendermint/PubKeyEd25519",
+        "value": "1wn21lz0KKixkrLKhUruTkfjiLvjqGnvuXsxPs8mTgA="
       },
-      "power": 10,
-      "name": "shanghai"
+      "power": "9",
+      "name": "shenzhen-01"
     },
     {
+      "address": "8A10044E78FF3AEC3D70537D37A8C11194A4D127",
       "pub_key": {
-        "type": "ed25519",
-        "data": "218D7E82A0F2C4B31D7089A4DEE33DEBA34899CC3924E99C1CD32D71BA25EB3A"
+        "type": "tendermint/PubKeyEd25519",
+        "value": "2BQOfD67KeHgV6ERJs8aV7HngaUqR7hIiGmbAMS5X4U="
       },
-      "power": 9,
-      "name": "shenzhen"
+      "power": "10",
+      "name": "hangzhou-01"
     },
     {
+      "address": "C1F8CA3F172B983B91D09120BD2FE9C2E159AE6A",
       "pub_key": {
-        "type": "ed25519",
-        "data": "89CDAD16EA0AF706EE5CD22EB44B4F8C4BBC241D61676F1F5F753A0317D8BF78"
+        "type": "tendermint/PubKeyEd25519",
+        "value": "Zg95euBX8v4QbOnmTqQyTSk4Y6EtyNqVN61YYhfJ33A="
       },
-      "power": 9,
-      "name": "hongkong"
+      "power": "9",
+      "name": "hangzhou-02"
     },
     {
+      "address": "A16581FCC7D178812D6CE414DE5EF98D97EF1B87",
       "pub_key": {
-        "type": "ed25519",
-        "data": "FF4CE56675890F7E460422761B22223E2CECD1EA31DA11F465AA83E78414D92A"
+        "type": "tendermint/PubKeyEd25519",
+        "value": "L+cL/YTFn+iHT0cMEhG6Ocaokn8+3Y4b1Lf/RIQWsPU="
       },
-      "power": 9,
-      "name": "qingdao"
+      "power": "9",
+      "name": "qingdao-01"
+    },
+    {
+      "address": "3C911414C8FEBDE41C772A13B8EBAA904FF75D16",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "b2/bwbYTT7w0k3XXRHlm8LBQF2nGXv23hhAoIKx2yV0="
+      },
+      "power": "9",
+      "name": "hongkong-01"
+    },
+    {
+      "address": "AA49F29EC9FD711CDA7E5D1CA7B44A0B91DE84CC",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "wu1JOydRsHZELzTvOW70oz0dfjs24SdbO6p30GSLv7c="
+      },
+      "power": "9",
+      "name": "huhehaote-01"
+    },
+    {
+      "address": "3EFB6C89787D7F48FCB36CA210BC5A422CCC1C60",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "gDLJKfrMNTZv34lZXPY2b9Y5CFge+EfQ7Js2qqlV0pI="
+      },
+      "power": "9",
+      "name": "zhagnjiakou-01"
+    },
+    {
+      "address": "75F8DD3810C4EEE327ED2B8E018758820B5CD4F6",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "1BYXN3HkGzWkETPRVlkmx4ZSQLPw02OJN02n8wvKDvk="
+      },
+      "power": "9",
+      "name": "zhangjiakou-02"
     }
   ],
   "app_hash": ""
