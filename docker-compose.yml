@@ -1,5 +1,4 @@
 services:
-
   knode:
     image: knode
     restart: always
@@ -7,42 +6,22 @@ services:
       - '8081:8081'
     volumes:
       - './kdata:/kdata'
-    links:
-#      - kchain
-      - redis
-    depends_on:
-#      - kchain
-      - redis
-
+  chain:
+    image: knode
+    command: chain
+    restart: always
+    volumes:
+      - './kdata:/kdata'
+  bakWorker:
+    image: knode
+    command: bakWorker
+    restart: always
+    volumes:
+      - './kdata:/kdata'
   kworker:
     image: knode
     command: worker
     restart: always
     volumes:
       - './kdata:/kdata'
-    links:
-#      - kchain
-      - redis
-    depends_on:
-#      - kchain
-      - redis
-
-#  kchain:
-#    restart: always
-#    image: kchain
-#    ports:
-#      - '46656:46656'
-#      - '46657:46657'
-#    volumes:
-#      - './kdata:/kdata'
-
-  redis:
-      image: redis
-      restart: always
-      command: redis-server --appendonly yes
-      ports:
-        - '6379:6379'
-      volumes:
-        - './kdata/redis_data:/data'
-
 version: '2'
