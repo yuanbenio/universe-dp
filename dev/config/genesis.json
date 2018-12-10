@@ -1,0 +1,49 @@
+{
+  "genesis_time": "2018-08-14T07:15:42.832748504Z",
+  "chain_id": "test-chain-ybl",
+  "consensus_params": {
+    "block_size_params": {
+      "max_bytes": "1048576",
+      "max_gas": "-1"
+    },
+    "evidence_params": {
+      "max_age": "100000"
+    }
+  },
+  "validators": [
+    {
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "4VrudUPBmgGhKrE1QWvtxrd9hs6zc8G7UXhfGSwshFI="
+      },
+      "power": "10",
+      "name": "node1"
+    },
+    {
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "xjdR0ee3AmXn/ODjfqrLNFClhFZBVxo90B6ip3ZBxqU="
+      },
+      "power": "9",
+      "name": "node2"
+    },
+    {
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "ZF5Viiy7/anfkXim+nyhSZrU2/rJs5BTX6kzlIZs/+w="
+      },
+      "power": "9",
+      "name": "node3"
+    },
+    {
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "uNRFfXfRgAJeWlM825Q9hJc5svbhU4b+R7FzkYgMvSs="
+      },
+      "power": "9",
+      "name": "node4"
+    }
+
+  ],
+  "app_hash": ""
+}

@@ -3,7 +3,7 @@ services:
     image: knode
     restart: always
     ports:
-      - '8081:8081'
+      - '8000:8000'
     volumes:
       - './kdata:/kdata'
   chain:

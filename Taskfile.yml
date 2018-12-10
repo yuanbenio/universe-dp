@@ -1,10 +1,10 @@
 default:
-  desc: 帮助文件
+  desc: help
   cmds:
     - task -l
 
 install_docker:
-  desc: 安装docker
+  desc: install docker
   cmds:
       - sudo curl -sSL https://get.daocloud.io/docker | sudo sh
       - sudo groupadd docker
@@ -13,7 +13,7 @@ install_docker:
       - sudo newgrp - docker
 
 deps:
-  desc: 检查依赖
+  desc: check deps
   cmds:
     - which docker || task install_docker
     - which docker-compose || sudo pip install docker-compose
@@ -21,12 +21,12 @@ deps:
     - task pull
 
 login:
-  desc: 登陆镜像仓库
+  desc: login
   cmds:
     - docker login -u baiyunhui@yuanben -p ybl12345 registry.cn-hangzhou.aliyuncs.com
 
 pro:
-  desc: 初始化pro项目
+  desc: init production project
   cmds:
     - task pull
     - sudo rm -rf kdata
@@ -36,7 +36,7 @@ pro:
     - task: s
 
 dev:
-  desc: 初始化dev项目
+  desc: init dev project
   cmds:
     - task pull
     - sudo rm -rf kdata
@@ -46,13 +46,13 @@ dev:
     - task: s
 
 s:
-  desc: 启动项目
+  desc: start container
   cmds:
     - docker-compose up -d
     - docker-compose logs -f
 
 ss:
-  desc: 重启项目
+  desc: restart container
   cmds:
     - task pull
     - docker-compose stop
@@ -61,51 +61,45 @@ ss:
     - docker-compose logs -f
 
 d:
-  desc: 删除项目
+  desc: remove container
   cmds:
     - docker-compose stop
     - docker-compose rm -f
 
 log:
-  desc: 打印日志
+  desc: print logs
   cmds:
     - docker-compose logs -f
 
 ls:
-  desc: 查看服务
+  desc: show containers
   cmds:
     - docker-compose ps
 
 kchain:
-  desc: 启动kchain
+  desc: start Yuanben Chain node (need to modify ports by config.toml)
   cmds:
-    - docker run -dit --restart=always --name=kchain -p 46656:46656 -p 46657:46657 -v `pwd`/kdata:/kdata universe-chain
+    - docker run -dit --restart=always --name=kchain -p port1:port1 -p port2:port2 -v `pwd`/kdata:/kdata universe-chain
     - docker logs -f kchain
 
 kchain_reset:
-  desc: 启动kchain
+  desc: reset DB and config properties
   cmds:
     - sudo docker run --rm -v `pwd`/kdata:/kdata kchain unsafe_reset_all
 
 kchain_restart:
-  desc: 重启kchain
+  desc: restart Yuanben Chain node
   cmds:
     - docker rm -f kchain
     - task kchain
 
 rm_none:
-  desc: 删除none镜像
+  desc: remove none images
   cmds:
     - sudo docker images | grep none | awk '{print $3}' | xargs docker rmi -f
 
-rm_stop:
-  desc: 删除停止的容器
-  cmds:
-    - sudo docker rm -f $(sudo docker ps -qa)
-    - sudo docker ps -a
-
 pull:
-  desc: 拉取镜像
+  desc: pull images
   cmds:
     - git pull
     - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/universe-chain:latest
@@ -113,6 +107,3 @@ pull:
 
     - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/knode
     - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/knode knode
-
-#    - sudo docker pull registry.cn-hangzhou.aliyuncs.com/yuanben/mysql
-#    - docker tag registry.cn-hangzhou.aliyuncs.com/yuanben/mysql mysql
