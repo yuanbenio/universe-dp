@@ -12,7 +12,7 @@ dna_cache_path: dnaData
 master_pubkeys: 1624de6420e15aee7543c19a01a12ab135416bedc6b77d86ceb373c1bb51785f192c2c8452
 seeds: EF8B18476BED7C98554CF327B898DCC82DA45FCB=https://openapi.yuanbenlian.com
 bak_history: true
-max_idle: 100
-max_active: 10
+max_idle: 1000
+max_active: 100
 cache_timeout : 600
 external_uri : https://openapi.yuanbenlian.com
