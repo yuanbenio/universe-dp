@@ -79,7 +79,7 @@ ls:
 kchain:
   desc: start Yuanben Chain node (need to modify ports by config.toml)
   cmds:
-    - docker run -dit --restart=always --name=kchain --log-opt max-size=20m --log-opt max-file=50 -p port1:port1 -p port2:port2 -v `pwd`/kdata:/kdata universe-chain
+    - docker run -dit --restart=always --name=kchain --log-driver=json-file --log-opt max-size=20m --log-opt max-file=50 -p port1:port1 -p port2:port2 -v `pwd`/kdata:/kdata universe-chain
     - docker logs -f kchain
 
 kchain_reset:
