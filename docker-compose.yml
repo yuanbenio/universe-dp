@@ -6,22 +6,42 @@ services:
       - '8000:8000'
     volumes:
       - './kdata:/kdata'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "50"
   chain:
     image: knode
     command: chain
     restart: always
     volumes:
       - './kdata:/kdata'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "50"
   bakWorker:
     image: knode
     command: bakWorker
     restart: always
     volumes:
       - './kdata:/kdata'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "50"
   kworker:
     image: knode
     command: worker
     restart: always
     volumes:
       - './kdata:/kdata'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "50"
 version: '2'

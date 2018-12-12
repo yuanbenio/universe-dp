@@ -3,7 +3,7 @@ config: /kdata/config
 home_path: /kdata
 priv_validator: /kdata/config/priv_validator.json
 debug: true
-log_level: info
+log_level: debug
 bind_addr: 0.0.0.0
 bind_port: 8081
 is_auth_filter: false
