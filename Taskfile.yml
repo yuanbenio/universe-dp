@@ -33,7 +33,6 @@ pro:
     - cp -r pro kdata
     - sudo docker run --rm -v `pwd`/kdata:/kdata universe-chain init
     - sudo chmod 755 `pwd`/kdata/config/priv_validator.json
-    - task: s
 
 dev:
   desc: init dev project
