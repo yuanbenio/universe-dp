@@ -23,7 +23,7 @@ deps:
 login:
   desc: login
   cmds:
-    - docker login -u baiyunhui@yuanben -p ybl12345 registry.cn-hangzhou.aliyuncs.com
+    - docker login --username=ybl.common@yuanben --password=Usx14K3d1!3kd registry.cn-hangzhou.aliyuncs.com
 
 pro:
   desc: init production project
